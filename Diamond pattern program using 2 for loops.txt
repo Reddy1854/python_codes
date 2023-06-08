@@ -1,0 +1,25 @@
+
+# program in python to print the diamond pattern(imp)
+
+
+n=int(input())
+count=1
+for i in range (2*n-1):#no of rows required is 2n-1
+    for j in range (2*n-1):# #no of cols required is 2n-1
+        #if condition is to print the upper pyramid structure
+        if i<n:
+            if j<n-1-i:# to print the initial spaces before printing stars
+                print(" ",end=" ")
+            else:#stars will  be printed as per the count value
+                print("* "*count)
+                if i<n-1:# important step for not increasing the count after upper pyramid
+                    count=count+2
+                break# breaks are essential to move to next line after printing stars
+        #else condition is to print the lower pyramid structure
+        else:
+            if j<i-n+1:#to print the initial spaces before printing stars
+                print(" ",end=" ")
+            else:#in the lower pyramid stars are decreasing ,so count-2
+                print("* "*(count-2))
+                count=count-2
+                break
